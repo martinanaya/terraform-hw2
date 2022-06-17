@@ -1,3 +1,8 @@
+# TF Locals Timestamp
+locals {
+  timestamp = formatdate("DD MMM YYYY hh:mm ZZZ",timestamp())
+}
+
 # Main VPC
 resource "aws_vpc" "manaya-tf2" {
   cidr_block = var.cidr_block
@@ -15,6 +20,7 @@ resource "aws_internet_gateway" "manaya-tf-igw" {
 
   tags = {
     Name = "manaya tf2 IGW"
+    timestamp = local.timestamp
   }
 }
 
@@ -28,6 +34,7 @@ resource "aws_subnet" "pubsubs" {
 
   tags = {
     Name = "manaya-pubsub-tf2-${count.index + 1}"
+    timestamp = local.timestamp
   }
 }
 
@@ -40,6 +47,7 @@ resource "aws_subnet" "privsubs" {
 
   tags = {
     Name = "manaya-privsub-tf2-${count.index + 1}"
+    timestamp = local.timestamp
   }
 }
 
@@ -51,6 +59,7 @@ resource "aws_nat_gateway" "manaya-tf-natgw" {
 
   tags = {
     Name = "manaya tf2 NATGW"
+    timestamp = local.timestamp
   }
 }
 
@@ -70,6 +79,7 @@ resource "aws_route_table" "manaya-tf-PubRT" {
 
   tags =  {
     Name = "manaya tf2 PubRT"
+    timestamp = local.timestamp
   }
 }
 
@@ -84,6 +94,7 @@ resource "aws_route_table" "manaya-tf-PrivRT" {
 
   tags =  {
     Name = "manaya tf2 PrivRT"
+    timestamp = local.timestamp
   }
 }
 

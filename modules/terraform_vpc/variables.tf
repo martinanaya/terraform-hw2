@@ -1,16 +1,10 @@
-variable "tag_name" {
-  default = "mainVPC"
+variable "cidr_block" {
+    type = string
+    description = "IP Scope"
+    default = "172.250.0.0/16"
 }
 
-variable "vpc-cidr" {
-  default = "172.172.0.0/16"
-}
-
-variable "availability_zone" {
-  default = "us-west-1"
-}
-
-variable "baseName" {
-  description = "Prefix for all resource names"
-  default = "Terr2-"
+variable "all_ips" {
+    type = string
+    default = "0.0.0.0/10"
 }
