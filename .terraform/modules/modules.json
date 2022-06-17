@@ -1,0 +1,1 @@
+{"Modules":[{"Key":"autoscale","Source":"./modules/terraform_autoscale","Dir":"modules/terraform_autoscale"},{"Key":"launchconf","Source":"./modules/terraform_launchconf","Dir":"modules/terraform_launchconf"},{"Key":"vpc","Source":"./modules/terraform_vpc","Dir":"modules/terraform_vpc"},{"Key":"","Source":"","Dir":"."}]}
